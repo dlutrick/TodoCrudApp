@@ -1,0 +1,25 @@
+{
+  "name": "TodoCrudApp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dlutrick/TodoCrudApp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dlutrick/TodoCrudApp/issues"
+  },
+  "homepage": "https://github.com/dlutrick/TodoCrudApp#readme"
+}
