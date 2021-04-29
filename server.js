@@ -4,6 +4,8 @@ let mongodb = require("mongodb");
 let app = express();
 let db;
 
+app.use(express.static("public"));
+
 let connectionString =
   "mongodb+srv://TodoCrudAppUser:Test1234@cluster0.y8phh.mongodb.net/TodoCrudApp?retryWrites=true&w=majority";
 mongodb.connect(
@@ -15,6 +17,7 @@ mongodb.connect(
   }
 );
 
+app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.get("/", function (req, res) {
@@ -60,7 +63,8 @@ app.get("/", function (req, res) {
             </ul>
             
           </div>
-          
+          <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+          <script src="/browser.js"></script>
         </body>
         </html>
         `);
@@ -71,4 +75,9 @@ app.post("/create-item", function (req, res) {
   db.collection("items").insertOne({ text: req.body.item }, function () {
     res.redirect("/");
   });
+});
+
+app.post("/update-item", function (req, res) {
+  console.log(req.body.text);
+  res.send("Success");
 });
